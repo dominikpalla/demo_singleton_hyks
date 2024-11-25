@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>My Form</title>
+</head>
+<body>
+<h1>Formulář</h1>
+<form action="/" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" th:value="${storage.name}" required>
+
+    <label for="number">Number:</label>
+    <input type="number" id="number" name="number" th:value="${storage.number}" required>
+
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date" th:value="${#dates.format(storage.date, 'yyyy-MM-dd')}" required>
+
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>
